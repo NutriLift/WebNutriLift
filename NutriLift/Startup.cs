@@ -1,13 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NutriLift.Data;
+using NutriLift.Services;
 
 namespace NutriLift
 {
@@ -24,6 +22,21 @@ namespace NutriLift
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            //For DB connection using Entity Framework Core
+            services.AddDbContext<NutriLiftContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("NutriLiftContext")));
+
+            // Added this line of code so that the landing page will be the login page
+            services.AddMvc().AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AddPageRoute("/UserDetails/Index", "");
+            });
+
+            services.AddScoped<IDBConnection, DBConnection>();
+            services.AddScoped<IUserDetailsRepository, UserDetailsRepository>();
+            services.AddScoped<IUserDetailsService, UserDetailsService>();
+            services.AddScoped<IFoodService, FoodService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,53 @@
+﻿@page
+@model NutriLift.Pages.UserDetails.UserListModel
+@{
+    ViewData["Title"] = "User List";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.userDetailsModel[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userDetailsModel[0].FamilyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userDetailsModel[0].BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userDetailsModel[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userDetailsModel[0].IsActive)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.userDetailsModel)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FamilyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                @*<td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>*@
+            </tr>
+        }
+    </tbody>
+</table>

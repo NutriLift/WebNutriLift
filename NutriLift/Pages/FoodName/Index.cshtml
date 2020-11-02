@@ -1,0 +1,42 @@
+﻿@page
+@model NutriLift.Pages.FoodName.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Food Name
+            </th>
+            <th>
+                Is Liquid
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.FoodName) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FN_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FN_IsLiquid)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.FN_PK">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@item.FN_PK">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
