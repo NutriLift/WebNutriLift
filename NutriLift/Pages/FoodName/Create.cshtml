@@ -15,13 +15,13 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="FoodName.FN_Name" class="control-label"></label>
+                <label class="control-label">Food Name</label>
                 <input asp-for="FoodName.FN_Name" class="form-control" />
                 <span asp-validation-for="FoodName.FN_Name" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="FoodName.FN_IsLiquid" /> @Html.DisplayNameFor(model => model.FoodName.FN_IsLiquid)
+                    <input class="form-check-input" asp-for="FoodName.FN_IsLiquid" /> Is Liquid
                 </label>
             </div>
             <div class="form-group">

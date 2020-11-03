@@ -7,9 +7,9 @@ namespace NutriLift.Services
 {
     public interface IFoodService
     {
-        Task<List<FoodNameModel>> GetAllFoodsAsync();
+        List<FoodNameModel> GetAllFoods();
         Task UpdateFoodAsync(FoodNameModel foodModel);
-        Task<FoodNameModel> GetFoodByIdAsync(Guid id);
+        FoodNameModel GetFoodById(Guid id);
         bool FoodNameExists(Guid id);
         Task DeleteFoodAsync(Guid id);
         Task CreateFoodAsync(FoodNameModel foodModel);

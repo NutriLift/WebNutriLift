@@ -34,6 +34,7 @@ namespace NutriLift
             });
 
             services.AddScoped<IDBConnection, DBConnection>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUserDetailsRepository, UserDetailsRepository>();
             services.AddScoped<IUserDetailsService, UserDetailsService>();
             services.AddScoped<IFoodService, FoodService>();
