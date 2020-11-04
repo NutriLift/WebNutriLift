@@ -19,14 +19,14 @@ namespace NutriLift.Pages.FoodName
         [BindProperty]
         public FoodNameModel FoodName { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(Guid? id)
+        public IActionResult OnGetAsync(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            FoodName = await foodService.GetFoodByIdAsync((Guid)id);
+            FoodName = foodService.GetFoodById((Guid)id);
 
             if (FoodName == null)
             {
@@ -41,7 +41,7 @@ namespace NutriLift.Pages.FoodName
                 return NotFound();
             }
 
-            FoodName = await foodService.GetFoodByIdAsync((Guid)id);
+            FoodName = foodService.GetFoodById((Guid)id);
 
             if (FoodName != null)
             {

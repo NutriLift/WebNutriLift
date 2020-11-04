@@ -20,7 +20,7 @@ namespace NutriLift.Pages.FoodName
 
         public async Task<IActionResult> OnGetAsync()
         {
-            FoodName = await foodService.GetAllFoodsAsync();
+            FoodName = foodService.GetAllFoods();
             return Page();
         }
     }

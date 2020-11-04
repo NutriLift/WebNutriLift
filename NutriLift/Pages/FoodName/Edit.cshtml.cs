@@ -27,7 +27,7 @@ namespace NutriLift.Pages.FoodName
                 return NotFound();
             }
 
-            FoodName = await foodService.GetFoodByIdAsync((Guid)id);
+            FoodName = foodService.GetFoodById((Guid)id);
 
             if (FoodName == null)
             {
