@@ -4,6 +4,8 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NutriLift", "NutriLift\NutriLift.csproj", "{FA80F815-D9FA-470C-A96B-CD5226E30920}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuteriLift_API", "NuteriLift_API\NuteriLift_API.csproj", "{6A836FBC-7722-4666-8D85-48CC44BECCE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{FA80F815-D9FA-470C-A96B-CD5226E30920}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA80F815-D9FA-470C-A96B-CD5226E30920}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA80F815-D9FA-470C-A96B-CD5226E30920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A836FBC-7722-4666-8D85-48CC44BECCE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A836FBC-7722-4666-8D85-48CC44BECCE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A836FBC-7722-4666-8D85-48CC44BECCE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A836FBC-7722-4666-8D85-48CC44BECCE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
