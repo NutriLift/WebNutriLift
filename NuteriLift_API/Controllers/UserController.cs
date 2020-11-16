@@ -26,14 +26,14 @@ namespace NuteriLift_API.Controllers
         {
             var User = new UserDetails()
             {
-                UserName = userModel.UserName,
-                FirstName = userModel.FirstName,
-                FamilyName = userModel.LastName,
-                BirthDate = userModel.DOB.Date,
-                Gender = userModel.Gender,
+                UD_UserName = userModel.UserName,
+                UD_FirstName = userModel.FirstName,
+                UD_FamilyName = userModel.LastName,
+                UD_BirthDate = userModel.DOB.Date,
+                UD_Gender = userModel.Gender,
                 //CreatedDate = DateTime.Now,
-                IsAdmin = userModel.IsAdmin,
-                IsActive = true
+                UD_IsAdmin = userModel.IsAdmin,
+                UD_IsActive = true
             };
             await userDetails.CreateAsync(User);
 
