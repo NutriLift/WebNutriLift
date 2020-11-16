@@ -17,7 +17,7 @@ namespace NuteriLift_API
         {
             modelBuilder.Entity<UserDetails>(entity =>
             {
-                entity.HasKey(e => e.UserId);
+                entity.HasKey(e => e.UD_PK);
                 entity.ToTable("UserDetails");
             });
 
