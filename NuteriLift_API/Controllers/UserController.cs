@@ -22,7 +22,7 @@ namespace NuteriLift_API.Controllers
         }
 
         [HttpPost("Register")]
-            public async void CreateUser ([FromBody] UserModel userModel)
+            public async Task CreateUser ([FromBody] UserModel userModel)
         {
             var User = new UserDetails()
             {
@@ -31,7 +31,7 @@ namespace NuteriLift_API.Controllers
                 UD_FamilyName = userModel.LastName,
                 UD_BirthDate = userModel.DOB.Date,
                 UD_Gender = userModel.Gender,
-                //CreatedDate = DateTime.Now,
+                //UD_CreatedDate = DateTime.Now,
                 UD_IsAdmin = userModel.IsAdmin,
                 UD_IsActive = true
             };
